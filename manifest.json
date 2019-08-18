@@ -1,6 +1,6 @@
 {
-    "name": "vk-selebrity",
-    "version": "1.0",
+    "name": "fima-vk-selebrity",
+    "version": "1.1",
     "description": "Help you make youself a star!",
     "permissions": ["activeTab","declarativeContent", "storage"],
     "background": {
