@@ -14,7 +14,7 @@ const addVerification = (name) => {
   }
   if (page === name) {
     const observer = new MutationObserver((() => {
-      addVerification('limitlessfima');
+      addVerification(name);
     }));
     observer.observe(document.body, {
       attributes: true,
@@ -22,6 +22,19 @@ const addVerification = (name) => {
   }
 };
 
+const initialization = () => {
+  if (!localStorage.id) {
+    const id = prompt('Ваш id');
+    localStorage.setItem('id', id);
+    if (id !== null && id !== 'undefined') {
+      addVerification(id);
+    }
+  } else {
+    addVerification(localStorage.id);
+  }
+};
 
-addVerification('limitlessfima');
-changeBackgroundColor('white');
+if (window.location.host === 'vk.com') {
+  initialization();
+  changeBackgroundColor('white');
+}
